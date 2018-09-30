@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DataStore : MonoBehaviour
 {
+    // シングルトン用
     private static GameObject mInstance = null;
     void Awake ()
     {
+        // シングルトン用
         if (mInstance == null)
         {
             mInstance = gameObject;
