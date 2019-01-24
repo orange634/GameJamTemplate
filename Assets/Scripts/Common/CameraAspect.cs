@@ -5,20 +5,18 @@ using UnityEngine;
 // カメラのアスペクト比を固定
 public class CameraAspect : MonoBehaviour
 {
-    [SerializeField]
-    private float x_aspect = 16.0f;
-    [SerializeField]
-    private float y_aspect = 9.0f;
+    [SerializeField] private float x_aspect = 16.0f;
+    [SerializeField] private float y_aspect = 9.0f;
     private Camera _camera;
 
-    void Awake()
+    private void Awake()
     {
         _camera = GetComponent<Camera>();
         Rect rect = calcAspect(x_aspect, y_aspect);
         _camera.rect = rect;
     }
 
-    void Update()
+    private void Update()
     {
         Rect rect = calcAspect(x_aspect, y_aspect);
         _camera.rect = rect;
